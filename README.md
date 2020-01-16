@@ -54,7 +54,7 @@ __https://mine-it-record.tistory.com/103__ (참고★)
 		    for (int i=0; i<3; i++){
 		    	lst[i] = scanner.nextInt();
 		    }
-		}
-        }
+	    }
+      }
 
 ```
