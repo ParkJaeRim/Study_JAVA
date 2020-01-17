@@ -1,14 +1,21 @@
-# 2020/01/15
 
-### 1) 
-백준에서 Java 문제를 풀 경우, class는 Main으로 바꾸어 제출하기
+# 규칙)  
 
-파일 명명법 : boj_문제번호.java  
+- 백준에서 Java 문제를 풀 경우, class는 Main으로 바꾸어 제출하기
+
+- 파일 명명법 : boj_문제번호.java  
+- Commit 명명법
+
+> : README.md (공부한 것 새로 업로드/수정) - (Update/Modify) (Stduy/.) on MONTH_DAY
+
+> : 파일 (공부한 것 새로 업로드/수정) - (Update/Modify) solve_problem on MONTH_DAY
 
 ---
-  
 
-### 2)
+# 2020/01/1
+
+  
+### 1)
 
 
 ```java
