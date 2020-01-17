@@ -88,7 +88,7 @@ __https://mine-it-record.tistory.com/103__ (참고★)
 : 버퍼를 이용하는 함수.
 : 많은 양의 데이터를 받을 경우 좋음. 작업속도도 차이가 많이 남.
 
-#### ㄱ. Buffered Reader
+#### ㄱ. BufferedReader
 : scanner는 Space와 Enter 모두를 경계로 인식하지만, Buffered Reader는 Enter만 경계로 인식함.
 : 입력받은 데이터는 String으로 고정되어 타입변환이 필수
 
@@ -104,7 +104,9 @@ int i = Integer.parseInt(br.readLine(); //Integer.parseInt()를 이용하여 형
 
 : scanner는 Space도 경계값으로 인식하여공백 다음 숫자를 받지만, Buffer는 아님.
   따라서, StringTokenizer를 이용.
-  
+
+
+#### ㄴ. BufferedWriter
 ```java
 
 BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
