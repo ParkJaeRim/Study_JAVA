@@ -6,7 +6,7 @@
 - 파일 명명법 : boj_문제번호.java  
 - Commit 명명법
 
-> : README.md (공부한 것 새로 업로드/수정) - (Update/Modify) (Stduy/.) on MONTH_DAY
+> : README.md (공부한 것 새로 업로드/수정) - (Update/Modify) (Study/.) on MONTH_DAY
 
 > : 파일 (공부한 것 새로 업로드/수정) - (Update/Modify) solve_problem on MONTH_DAY
 
@@ -105,7 +105,7 @@ __https://mine-it-record.tistory.com/103__ (참고★)
 //선언 후, 값 입력
 BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 String s = br.readLine();
-int i = Integer.parseInt(br.readLine(); //Integer.parseInt()를 이용하여 형변환
+int i = Integer.parseInt(br.readLine()); //Integer.parseInt()를 이용하여 형변환
 
 ```
 
@@ -130,3 +130,52 @@ String str = "kkk"
 bw.write(str); //개행 불가
 bw.flush(); // 남은 데이터 출력
 bw.close(); // 종료
+
+```
+
+---
+
+# 2020/01/19
+
+### 1) ArrayList 
+
+- 배열 길이를 자동으로 조절해준다.
+- 객체 삽입,삭제,검색이 가능하다.
+- 벡터 내에 다양한 타입들을 삽입할 수 있다.
+- add() : 삽입 메소드, get() : 객체 얻을 수 있는 메소드
+
+```java
+
+//선언하기
+
+ArrayList a = new ArrayList ();
+
+//삽입
+a.add(4)
+a.add('r')
+a.add(index,100); //index에 100 삽입
+
+//삭제
+a.remove(index); //index에 있는 객체 삭제
+
+//조회
+a.get(index); //index에 있는 객체 가져오기
+
+//길이
+int len = a.size();
+
+//반복
+//ArrayList 탐색 시, 사용
+Iterator it<Integer> = a.iterator();
+
+while(it.hasNext()){
+	System.out.println(it.next()): //a의 객체 하나씩 순회
+}
+
+while(it.hasNext()){
+	int value = it.next();
+	if (value == 30);
+		it.remove();
+	//value가 30이면, 해당 객체를 삭제하고, 더 이상 순회할 것이 없다면 종료
+	}
+}
