@@ -9,8 +9,7 @@ public class boj_2775 {
 
 		int T = scanner.nextInt();
 		for (int i = 0; i < T; i++) {
-			int ppl = 0;
-			int temp = 0;
+
 
 			int K = scanner.nextInt();
 			int N = scanner.nextInt();
@@ -20,7 +19,6 @@ public class boj_2775 {
 				for (int n = 0; n < N; n++) {
 					if (m == 0) {
 						apart[m][n] = n + 1;
-						// System.out.print(apart[m][n]+" ");
 					} else {
 						for (int k = n; k >= 0; k--) {
 							apart[m][n] += apart[m - 1][k];
