@@ -179,3 +179,11 @@ while(it.hasNext()){
 	//value가 30이면, 해당 객체를 삭제하고, 더 이상 순회할 것이 없다면 종료
 	}
 }
+```
+
+---
+
+# 2020/01/28
+
+### 1) 
+![hi](https://user-images.githubusercontent.com/29462979/73269605-7c4c8e00-4220-11ea-8b29-122af75bb3e0.jpg)
