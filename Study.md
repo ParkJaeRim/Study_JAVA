@@ -182,7 +182,7 @@ while(it.hasNext()){
 # 2020/02/12
 
 ### 1) 범위 
-![관련문제 : 파리퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq&categoryId=AV5PzOCKAigDFAUq&categoryType=CODE)
+[관련문제 : 파리퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq&categoryId=AV5PzOCKAigDFAUq&categoryType=CODE)
 
 ```java
 for (int i = 0; i <= N - M; i++) {
@@ -197,7 +197,7 @@ for (int i = 0; i <= N - M; i++) {
 
 ```
 
-![관련문제 : 스도쿠 검증] (https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE)
+[관련문제 : 스도쿠 검증](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE)
 
 ```java
 for (int i = 0; i < 3; i++) {
