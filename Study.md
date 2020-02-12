@@ -175,3 +175,45 @@ while(it.hasNext()){
 
 ### 1) 
 ![KakaoTalk_20200128_225412003](https://user-images.githubusercontent.com/29462979/73269972-275d4780-4221-11ea-9986-b0b2009d87e9.jpg)
+
+
+---
+
+# 2020/02/12
+
+### 1) 범위 
+![관련문제 : 파리퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq&categoryId=AV5PzOCKAigDFAUq&categoryType=CODE)
+
+```java
+for (int i = 0; i <= N - M; i++) {
+	for (int j = 0; j <= N - M; j++) {// 시작점 부여
+		for (int i2 = i; i2 < i + M; i2++) {
+			for (int j2 = j; j2 < j + M; j2++) {
+				sum += lst[i2][j2];
+			}
+		}
+	}
+}
+
+```
+
+![관련문제 : 스도쿠 검증] (https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Psz16AYEDFAUq&categoryId=AV5Psz16AYEDFAUq&categoryType=CODE)
+
+```java
+for (int i = 0; i < 3; i++) {
+	for (int j = 0; j < 3; j++) {// 시작점
+		num = new int[9];
+		for (int i2 = i * 3; i2 < i * 3 + 3; i2++) {
+		for (int j2 = j * 3; j2 < j * 3 + 3; j2++) {
+			num[lst[i2][j2] - 1] += 1;
+		}
+	}
+	for (int kk = 0; kk < num.length; kk++) {
+		if (num[kk] != 1) {
+			dec = false;
+			}
+		}
+	}
+}
+```
+
