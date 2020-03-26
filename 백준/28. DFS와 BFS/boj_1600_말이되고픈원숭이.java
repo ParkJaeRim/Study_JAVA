@@ -30,14 +30,18 @@ public class boj_1600_말이되고픈원숭이 {
 		}
 		flag = false;
 		bfs(0, 0);
-		if(flag) {
+		int min = Integer.MAX_VALUE;
+		if (flag) {
 			for (int o = 0; o <= K; o++) {
 				if (count[R - 1][C - 1][o] != 0) {
-					System.out.println(count[R - 1][C - 1][o]);
+					min = Math.min(min, count[R - 1][C - 1][o]);
 				}
 			}
-		}
-		else {
+			if (min == Integer.MAX_VALUE) {
+				System.out.println(0);
+			}else 
+			System.out.println(min);
+		} else {
 			System.out.println(-1);
 		}
 	}
@@ -48,15 +52,17 @@ public class boj_1600_말이되고픈원숭이 {
 		count[i][j][0] = 0;
 		visited[i][j][0] = true;
 		while (!que.isEmpty()) {
-			print(count);
 			int[] cu = que.poll();
 			int y = cu[0];
 			int x = cu[1];
 			int z = cu[2];
 
 			if (y == R - 1 && x == C - 1) {
-				flag = true;
-
+				if(map[R-1][C-1] ==1) {
+					flag= false;
+				}else {
+					flag = true;
+				}
 				return;
 			}
 
@@ -91,6 +97,7 @@ public class boj_1600_말이되고픈원숭이 {
 
 	public static void print(int[][][] lst) {
 		for (int i = 0; i <= K; i++) {
+			System.out.println(i);
 			for (int j = 0; j < R; j++) {
 				for (int k = 0; k < C; k++) {
 					System.out.print(lst[j][k][i] + " ");
