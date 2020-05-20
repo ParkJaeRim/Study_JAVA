@@ -5,7 +5,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class boj_16865_드래곤커브 {
+public class boj_15685_드래곤커브 {
 	static int startX, startY;
 	static ArrayList<int[]> al;
 
