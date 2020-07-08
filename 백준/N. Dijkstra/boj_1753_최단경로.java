@@ -5,96 +5,99 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class boj_1753_최단경로 {
-	static ArrayList<Pair>[] lst;
-	static int N, x;
-	static boolean[] visited;
-	static boolean flag;
+	static int V, E;
 	static int[] dist;
-	static int start;
+	static ArrayList<Edge>[] al;
+	static boolean[] visited;
+	static Queue<Edge> pq;
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		if (st.hasMoreTokens()) {
-			N = Integer.parseInt(st.nextToken());
-			x = Integer.parseInt(st.nextToken());
+		V = Integer.parseInt(st.nextToken());
+		E = Integer.parseInt(st.nextToken());
+
+		dist = new int[V + 1];
+		visited = new boolean[V + 1];
+		al = new ArrayList[V + 1];
+
+		int start = Integer.parseInt(br.readLine());
+		for (int i = 0; i < V + 1; i++) {
+			al[i] = new ArrayList<Edge>();
 		}
 
-		dist = new int[N + 1];
-		visited = new boolean[N + 1];
-		lst = new ArrayList[N + 1];
-
-		st = new StringTokenizer(br.readLine());
-		start = Integer.parseInt(st.nextToken());
-
-		for (int i = 0; i < N + 1; i++) {
-			lst[i] = new ArrayList<Pair>();
-		}
-
-		for (int i = 0; i < x; i++) {
+		for (int i = 0; i < E; i++) {
 			st = new StringTokenizer(br.readLine());
-			if (st.hasMoreTokens()) {
-				int u = Integer.parseInt(st.nextToken());
-				int v = Integer.parseInt(st.nextToken());
-				int weight = Integer.parseInt(st.nextToken());
-				lst[u].add(new Pair(v, weight));
-			}
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+			int v = Integer.parseInt(st.nextToken());
+			al[x].add(new Edge(y, v));
 		}
 
-		Arrays.fill(dist, Integer.MAX_VALUE);
+		for (int i = 0; i < al.length; i++) {
+			ArrayList<Edge> a = al[i];
+		}
 
-		PriorityQueue<Pair> pq = new PriorityQueue<>();
+		visited[start] = true;
+
+		int INF = 987654321;
+		Arrays.fill(dist, INF);
+		pq = new LinkedList<>();
 		dist[start] = 0;
-		pq.offer(new Pair(start, dist[start]));
+		find(start);
 
-		while (!pq.isEmpty()) {
-			Pair p = pq.poll();
-			int current = p.idx;
-			int distance = p.dist;
-
-			if (dist[current] < distance) {
-				continue;
-			}
-
-			for (int i = 0; i < lst[current].size(); i++) {
-				int next = lst[current].get(i).idx;
-				int nextDistance = distance + lst[current].get(i).dist;
-
-				if (nextDistance < dist[next]) {
-					dist[next] = nextDistance;
-					pq.offer(new Pair(next, nextDistance));
-				}
-			}
-		}
-
+		StringBuilder sb = new StringBuilder();
 		for (int i = 1; i < dist.length; i++) {
-			if (dist[i] == Integer.MAX_VALUE)
-				System.out.println("INF");
-			else
-				System.out.println(dist[i]);
+			if (dist[i] == INF) {
+				sb.append("INF").append("\n");
+			} else {
+				sb.append(dist[i]).append("\n");
+			}
 		}
-
+		System.out.println(sb.toString());
+		br.close();
 	}
 
-	public static class Pair implements Comparable<Pair> {
-
-		int idx;
-		int dist;
-
-		public Pair(int idx, int dist) {
-			this.idx = idx;
-			this.dist = dist;
+	public static void find(int s) {
+		for (int j = 0; j < al[s].size(); j++) {
+			pq.offer(new Edge(al[s].get(j).y, al[s].get(j).v));
 		}
 
-		@Override
-		public int compareTo(Pair o) {
-			return this.dist - o.dist;
+		while (!pq.isEmpty()) {
+			Edge e = pq.poll();
+			if (dist[e.y] > dist[s] + e.v) {
+				dist[e.y] = dist[s] + e.v;
+			}
 		}
 
+		int x = Integer.MAX_VALUE;
+		int idx = -1;
+		for (int i = 1; i < dist.length; i++) {
+			if (!visited[i] && dist[i] != 0 && x > dist[i]) {
+				x = Math.min(x, dist[i]);
+				idx = i;
+			}
+		}
+		if (idx != -1)
+			visited[idx] = true;
+		else
+			return;
+		find(idx);
+	}
+
+	public static class Edge {
+		int y;
+		int v;
+
+		public Edge(int y, int v) {
+			this.y = y;
+			this.v = v;
+		}
 	}
 }
