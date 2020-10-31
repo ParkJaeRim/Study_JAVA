@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="백준/B. if, for, while문"/>
+	<classpathentry kind="src" path="백준/N. Dijkstra"/>
+	<classpathentry kind="src" path="SWEA/D5"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
